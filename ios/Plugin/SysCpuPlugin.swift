@@ -15,4 +15,10 @@ public class SysCpuPlugin: CAPPlugin {
             "value": implementation.echo(value)
         ])
     }
+
+    @objc func getCpuInfo(_ call: CAPPluginCall) {
+        call.resolve([
+            "load": 0.2
+        ])
+    }
 }

@@ -14,6 +14,8 @@ npx cap sync
 <docgen-index>
 
 * [`echo(...)`](#echo)
+* [`getCpuInfo()`](#getcpuinfo)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -33,5 +35,26 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 --------------------
+
+
+### getCpuInfo()
+
+```typescript
+getCpuInfo() => Promise<CpuInfo>
+```
+
+**Returns:** <code>Promise&lt;<a href="#cpuinfo">CpuInfo</a>&gt;</code>
+
+--------------------
+
+
+### Interfaces
+
+
+#### CpuInfo
+
+| Prop       | Type                |
+| ---------- | ------------------- |
+| **`load`** | <code>number</code> |
 
 </docgen-api>

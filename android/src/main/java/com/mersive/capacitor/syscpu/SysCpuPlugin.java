@@ -19,4 +19,11 @@ public class SysCpuPlugin extends Plugin {
         ret.put("value", implementation.echo(value));
         call.resolve(ret);
     }
+
+    @PluginMethod
+    public void getCpuInfo(PluginCall call) {
+        JSObject ret = new JSObject();
+        ret.put("load", implementation.getCpuLoad());
+        call.resolve(ret);
+    }
 }
