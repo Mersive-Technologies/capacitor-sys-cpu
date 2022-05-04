@@ -6,6 +6,9 @@ import java.io.IOException;
 
 public class SysCpu {
 
+    private long lastCpu = 0;
+    private long lastidle = 0;
+
     public String echo(String value) {
         Log.i("Echo", value);
         return value;
@@ -19,8 +22,8 @@ public class SysCpu {
 
             String[] toks = load.split(" ");
 
-            long idle1 = Long.parseLong(toks[5]);
-            long cpu1 =
+            long idle = Long.parseLong(toks[5]);
+            long cpu =
                 Long.parseLong(toks[2]) +
                 Long.parseLong(toks[3]) +
                 Long.parseLong(toks[4]) +
@@ -28,29 +31,11 @@ public class SysCpu {
                 Long.parseLong(toks[7]) +
                 Long.parseLong(toks[8]);
 
-            try {
-                Thread.sleep(360);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            float result = (float) (cpu - lastCpu) / ((cpu + idle) - (lastCpu + lastIdle));
 
-            reader.seek(0);
-            load = reader.readLine();
-            reader.close();
+            lastCpu = cpu;
+            lastIdle = idle;
 
-            toks = load.split(" ");
-
-            long idle2 = Long.parseLong(toks[5]);
-            long cpu2 =
-                Long.parseLong(toks[2]) +
-                Long.parseLong(toks[3]) +
-                Long.parseLong(toks[4]) +
-                Long.parseLong(toks[6]) +
-                Long.parseLong(toks[7]) +
-                Long.parseLong(toks[8]);
-
-            float result = (float) (cpu2 - cpu1) / ((cpu2 + idle2) - (cpu1 + idle1));
-            //Log.i("CapacitorCastor", "cpu load = " + result);
             return result;
 
         } catch (IOException ex) {
