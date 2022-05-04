@@ -1,6 +1,6 @@
 {
   "name": "capacitor-sys-cpu",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Capacitor plugin for obtaining system CPU utilization.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

@@ -7,7 +7,7 @@ import java.io.IOException;
 public class SysCpu {
 
     private long lastCpu = 0;
-    private long lastidle = 0;
+    private long lastIdle = 0;
 
     public String echo(String value) {
         Log.i("Echo", value);
