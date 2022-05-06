@@ -15,6 +15,7 @@ npx cap sync
 
 * [`echo(...)`](#echo)
 * [`getCpuInfo()`](#getcpuinfo)
+* [`getZoneTemp(...)`](#getzonetemp)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -48,6 +49,21 @@ getCpuInfo() => Promise<CpuInfo>
 --------------------
 
 
+### getZoneTemp(...)
+
+```typescript
+getZoneTemp(options: { zone: Number; }) => Promise<{ temp: number; }>
+```
+
+| Param         | Type                                                 |
+| ------------- | ---------------------------------------------------- |
+| **`options`** | <code>{ zone: <a href="#number">Number</a>; }</code> |
+
+**Returns:** <code>Promise&lt;{ temp: number; }&gt;</code>
+
+--------------------
+
+
 ### Interfaces
 
 
@@ -56,5 +72,18 @@ getCpuInfo() => Promise<CpuInfo>
 | Prop       | Type                |
 | ---------- | ------------------- |
 | **`load`** | <code>number</code> |
+
+
+#### Number
+
+An object that represents a number of any kind. All JavaScript numbers are 64-bit floating-point numbers.
+
+| Method            | Signature                                           | Description                                                                                                                       |
+| ----------------- | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| **toString**      | (radix?: number \| undefined) =&gt; string          | Returns a string representation of an object.                                                                                     |
+| **toFixed**       | (fractionDigits?: number \| undefined) =&gt; string | Returns a string representing a number in fixed-point notation.                                                                   |
+| **toExponential** | (fractionDigits?: number \| undefined) =&gt; string | Returns a string containing a number represented in exponential notation.                                                         |
+| **toPrecision**   | (precision?: number \| undefined) =&gt; string      | Returns a string containing a number represented either in exponential or fixed-point notation with a specified number of digits. |
+| **valueOf**       | () =&gt; number                                     | Returns the primitive value of the specified object.                                                                              |
 
 </docgen-api>
