@@ -11,4 +11,8 @@ export class SysCpuWeb extends WebPlugin implements SysCpuPlugin {
   async getCpuInfo(): Promise<CpuInfo> {
     return { load: 0.1 };
   }
+
+  async getZoneTemp(_: { zone: Number; }): Promise<{ temp: number }> {
+    return {temp: 0.0};
+  }
 }
