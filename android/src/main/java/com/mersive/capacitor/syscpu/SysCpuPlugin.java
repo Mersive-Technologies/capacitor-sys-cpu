@@ -39,7 +39,7 @@ public class SysCpuPlugin extends Plugin {
     private Double getZoneTemp(int zone) {
         Process process;
         try {
-            process = Runtime.getRuntime().exec("cat sys/class/thermal/thermal_zone" + (zone + 2) + "/temp");
+            process = Runtime.getRuntime().exec("cat /sys/class/thermal/thermal_zone" + (zone + 2) + "/temp");
             process.waitFor();
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line = reader.readLine();
