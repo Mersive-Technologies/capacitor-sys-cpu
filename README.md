@@ -15,6 +15,7 @@ npx cap sync
 
 * [`echo(...)`](#echo)
 * [`getCpuInfo()`](#getcpuinfo)
+* [`getOnlineCpus()`](#getonlinecpus)
 * [`getZoneTemp(...)`](#getzonetemp)
 * [Interfaces](#interfaces)
 
@@ -49,6 +50,17 @@ getCpuInfo() => Promise<CpuInfo>
 --------------------
 
 
+### getOnlineCpus()
+
+```typescript
+getOnlineCpus() => Promise<OnlineInfo>
+```
+
+**Returns:** <code>Promise&lt;<a href="#onlineinfo">OnlineInfo</a>&gt;</code>
+
+--------------------
+
+
 ### getZoneTemp(...)
 
 ```typescript
@@ -72,6 +84,13 @@ getZoneTemp(options: { zone: Number; }) => Promise<{ temp: number; }>
 | Prop       | Type                |
 | ---------- | ------------------- |
 | **`load`** | <code>number</code> |
+
+
+#### OnlineInfo
+
+| Prop         | Type                |
+| ------------ | ------------------- |
+| **`online`** | <code>string</code> |
 
 
 #### Number

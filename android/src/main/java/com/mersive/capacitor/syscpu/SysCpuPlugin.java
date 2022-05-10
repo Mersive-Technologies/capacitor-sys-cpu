@@ -36,6 +36,13 @@ public class SysCpuPlugin extends Plugin {
         call.resolve(ret);
     }
 
+    @PluginMethod
+    public void getOnlineCpus(PluginCall call) {
+        JSObject ret = new JSObject();
+        ret.put("online", implementation.getOnlineCpus());
+        call.resolve(ret);
+    }
+
     private Double getZoneTemp(int zone) {
         Process process;
         try {

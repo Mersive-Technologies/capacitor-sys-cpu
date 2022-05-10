@@ -44,4 +44,16 @@ public class SysCpu {
 
         return 0;
     }
+
+    public String getOnlineCpus() {
+        try {
+            RandomAccessFile reader = new RandomAccessFile("/sys/devices/system/cpu/online", "r");
+            String online = reader.readLine();
+            return online;
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return "";
+    }
 }
